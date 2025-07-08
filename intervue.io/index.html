@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervue.io</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>  
+</head>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-4 border-b text-sm">
+      <img class="h-12" src="logo black.png" alt="Logo" />
+      <nav class="hidden md:flex gap-6 ml-auto mr-4">
+        <a href="#" class="font-bold">
+          <i class="fa-solid fa-user"></i> Become an Interviewer
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Start a Trial</a>
+      </nav>
+      <div class="flex gap-2">
+        <button class="border px-4 py-1 rounded">Login</button>
+        <button class="bg-black text-white px-4 py-1 rounded">Signup</button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-10 px-4">
+      <h1 class="text-2xl font-semibold mb-2">Technical Interview Resources</h1>
+      <p class="text-gray-500 text-sm mb-6">Find all the technical interview resources here</p>
+      <div class="max-w-xl mx-auto">
+        <div class="relative">
+          <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input type="text" placeholder="Search for resource here" class="w-full bg-gray-50 border px-10 py-2 rounded-3xl" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Grid -->
+    <section class="px-4 grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <template id="card-template">
+        <a href="#" class="block p-6 border rounded-lg hover:shadow-md transition">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="inline-block text-white text-xs px-2 py-1 rounded bg-blue-500">Easy</span>
+            <p class="text-xs text-gray-500 uppercase mb-1">Data Structures & Algorithms</p>
+          </div>
+          <h2 class="font-semibold text-sm mb-1">Design a Free Food App</h2>
+          <p class="text-xs text-gray-600">
+            We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews
+          </p>
+        </a>
+      </template>
+      <script>
+        for (let i = 0; i < 12; i++) {
+          const card = document.getElementById('card-template').content.cloneNode(true);
+          const badge = card.querySelector('span');
+          if (i % 3 === 1) {
+            badge.className += ' bg-yellow-500';
+            badge.textContent = 'Medium';
+          }
+          if (i % 3 === 2) {
+            badge.className += ' bg-green-600';
+            badge.textContent = 'Hard';
+          }
+          document.currentScript.parentNode.appendChild(card);
+        }
+      </script>
+    </section>
+
+
+<!-- Security Section -->
+<section class="bg-gray-100 py-24 px-4 mt-14">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-start text-2xl font-semibold mb-2">Security is our top priority</h2>
+    <p class="text-start text-sm text-gray-700 mb-8">Intervue serves startups to Fortune 500 companies with enterprise grade security</p>
+    <div class="flex flex-col md:flex-row gap-5">
+      <a href="#" class="border p-6 rounded shadow-sm h-54 flex flex-col bg-white w-full md:w-1/4 hover:shadow-md transition">
+        <div class="flex flex-col items-start">
+          <div class="mb-2"><i class="fa-solid fa-key"></i></div>
+          <strong class="block mb-1">Security</strong>
+          <small>Protection at every level</small>
+        </div>
+        <div class="w-full flex justify-end mt-auto"><i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="#" class="border p-6 rounded shadow-sm h-54 flex flex-col items-start justify-between bg-white w-full md:w-1/4 hover:shadow-md transition">
+        <div>
+          <div class="mb-2"><i class="fa-solid fa-layer-group"></i></div>
+          <strong class="block mb-1">Compliance</strong>
+          <small>Enterprise grade assurance</small>
+        </div>
+        <div class="w-full flex justify-end"><i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <div class="flex flex-col gap-5 w-full md:w-1/2">
+        <a href="#" class="border p-6 rounded shadow-sm h-22 w-1/2 flex flex-col justify-between bg-white hover:shadow-md transition">
+          <div>
+            <div class="mb-2"><i class="fa-solid fa-rocket"></i></div>
+            <div class="flex flex-row justify-between"><div><strong class="block mb-1">Intervue for Startups</div><div><i class="fa-solid fa-arrow-right"></i></div></div>
+          </div>
+        </a>
+        <a href="#" class="border p-6 rounded shadow-sm h-22 w-1/2 flex flex-col justify-between bg-white hover:shadow-md transition">
+          <div>
+            <div class="mb-2"><i class="fa-solid fa-globe"></i></div>
+            <div class="flex flex-row justify-between"><div><strong class="block mb-1">Intervue for Enterprises</div><div><i class="fa-solid fa-arrow-right"></i></div></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Testimonial Section -->
+<section class="max-w-6xl mx-auto py-16 px-4">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- Left: YouTube Embed with Rounded Right Corner -->
+    <div class="overflow-hidden rounded-r-[80px]">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Right: Text Content -->
+    <div class="flex flex-col justify-between h-full">
+      <div>
+        <p class="text-sm text-gray-600 mt-5 mb-4">After interviewing candidates on Intervue, we were able to convert at least 8% of people from our application base to hires.</p>
+        <p class="font-semibold text-sm">Niket Gupta<br /><span class="text-gray-500">Group head of talent acquisition, Yubi</span></p>
+        <a href="#" class="text-blue-600 text-sm mt-10 inline-block ">See more customer stories →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Products Section -->
+    <section class="bg-white py-12 px-4">
+      <h2 class="text-center text-2xl font-semibold mb-8">Explore more products on Intervue</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="border p-4 rounded">
+          <img src="https://uploads-ssl.webflow.com/608e9cc36cbcc089f0998643/64c6135016fce3dec26c8c4b_technical-interviews.png" alt="On-demand" class="mb-4" />
+          <p class="font-bold mb-1">On-demand</p>
+          <p class="text-sm text-gray-600">Save 90% engineering & recruitment , outsource candidate interviews to us</p>
+          <a href="#" class="text-blue-600 text-sm mt-2 inline-block">Know more →</a>
+        </div>
+        <div class="border p-4 rounded">
+          <img src="https://uploads-ssl.webflow.com/608e9cc36cbcc089f0998643/64c61350bf2156a87d68512b_programming.png" alt="Live interviews" class="mb-4" />
+          <p class="font-bold mb-1">Live interviews</p>
+          <p class="text-sm text-gray-600">Assess candidates in real-time with our live coding environment & integrated video calls</p>
+          <a href="#" class="text-blue-600 text-sm mt-2 inline-block">Know more →</a>
+        </div>
+        <div class="border p-4 rounded">
+          <img src="https://uploads-ssl.webflow.com/608e9cc36cbcc089f0998643/64c616d53601adf691d597e4_detailed-report.png" alt="Assessments" class="mb-4" />
+          <p class="font-bold mb-1">Assessments</p>
+          <p class="text-sm text-gray-600">Share assessments across batches, and Subjective questions.</p>
+          <a href="#" class="text-blue-600 text-sm mt-2 inline-block ">Know more →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+<section class="bg-pink-50 py-12 px-4">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+    <!-- Left Column: Title & Subtext -->
+    <div class="flex flex-col justify-between">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">FAQ</h2>
+        <p class="text-sm text-gray-600">Here are some of the most commonly asked questions about Intervue's platform.</p>
+      </div>
+      <div class="mt-8">
+        <p class="text-sm text-gray-700 mb-1">Still have doubts?</p>
+        <a href="#" class="text-sm text-blue-600"> <i class="fa-solid fa-phone"></i> Talk to our representative </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Accordion -->
+    <div class="space-y-2 text-sm">
+      <details class="p-4 rounded">
+        <summary class="font-semibold cursor-pointer flex justify-between items-center">How do I schedule an interview?<span>+</span></summary>
+        <p class="mt-2 text-gray-600">You can schedule by logging in and selecting a time slot that works for you.</p>
+      </details>
+      <hr>
+      <details class="p-4 rounded">
+        <summary class="font-semibold cursor-pointer flex justify-between items-center">Will I be charged per interview?<span>+</span></summary>
+        <p class="mt-2 text-gray-600">Pricing is based on packages, but yes, per-interview pricing is available.</p>
+      </details>
+      <hr>
+      <details class="p-4 rounded">
+        <summary class="font-semibold cursor-pointer flex justify-between items-center">Can I get a trial for On-demand interviews?<span>+</span></summary>
+        <p class="mt-2 text-gray-600">Yes, a limited trial is available for select users.</p>
+      </details>
+      <hr>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Footer Section -->
+<footer class="bg-black text-white py-16 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+    <div>
+      <img src="logo white.png" alt="Logo" class="h-8 mb-4" />
+      <div class="flex flex-row gap-2 text-xs text-gray-400 mb-4">
+        <p>Facebook</p>
+        <p>Instagram</p>
+        <p>LinkedIn</p>
+      </div>
+      <p class="text-sm font-semibold text-yellow-400 mb-1">Hire better & faster</p>
+      <div class="relative border-b border-gray-500">
+        <input type="email" placeholder="Enter your email" class="w-full px-0 py-2 text-white bg-transparent border-none focus:outline-none" />
+        <i class="fa-solid fa-arrow-right absolute right-0 top-1/2 transform -translate-y-1/2 text-yellow-400 ml-2"></i>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="#">So gehts</a></li>
+        <li><a href="#">Erfahrung</a></li>
+        <li><a href="#">Aligner</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Resources</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Lift Media</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Podcast</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="#">Gratis Termin</a></li>
+        <li><a href="#">Freunde einladen</a></li>
+        <li><a href="#">Patientinforma</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Product</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Lift Media</a></li>
+        <li><a href="#">Presse Kit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-10 text-center text-xs text-gray-500">© 2023 Intervue. Crafted by great minds.</div>
+</footer>
+
+
+</body>
+</html>
